@@ -33,4 +33,10 @@ class AnchoredState implements ShipState {
     public void startSailing(FishingShip ship) {
         System.out.println("Me cannot move this barge 'til we raise the anchor");
     }
+
+    @Override
+    public void wreck(FishingShip ship) {
+        System.out.println("Where did that lightening come from?!");
+        ship.setState(new WreckedState());
+    }
 }

@@ -32,4 +32,10 @@ class SailingState implements ShipState {
     public void startSailing(FishingShip ship) {
         System.out.println("Sailing!");
     }
+
+    @Override
+    public void wreck(FishingShip ship) {
+        System.out.println("Well that rock wasn't there earlier");
+        ship.setState(new WreckedState());
+    }
 }

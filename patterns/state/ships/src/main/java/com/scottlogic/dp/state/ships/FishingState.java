@@ -31,4 +31,10 @@ class FishingState implements ShipState {
     public void stopSailing(FishingShip ship) {
         System.out.println("Already still like the wind in summer.");
     }
+
+    @Override
+    public void wreck(FishingShip ship) {
+        System.out.println("This fish is a little bigger than expected");
+        ship.setState(new WreckedState());
+    }
 }

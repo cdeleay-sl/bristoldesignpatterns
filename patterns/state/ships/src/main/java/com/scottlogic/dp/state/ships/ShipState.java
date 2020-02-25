@@ -8,4 +8,5 @@ interface ShipState {
     void raiseAnchor(FishingShip ship);
     void stopSailing(FishingShip ship);
     void startSailing(FishingShip ship);
+    void wreck(FishingShip ship);
 }

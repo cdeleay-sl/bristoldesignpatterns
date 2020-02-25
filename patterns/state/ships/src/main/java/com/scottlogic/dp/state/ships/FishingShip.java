@@ -34,4 +34,8 @@ public class FishingShip {
     public void sail() {
         state.startSailing(this);
     }
+
+    public void wreck() {
+        state.wreck(this);
+    }
 }
