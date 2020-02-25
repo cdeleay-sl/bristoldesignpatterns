@@ -1,8 +1,7 @@
-package com.scottlogic.dp.state;
+package com.scottlogic.dp.state.ships;
 
-import com.scottlogic.dp.state.ships.FishingShip;
 
-public interface ShipState {
+interface ShipState {
     void startFishing(FishingShip ship);
     void stopFishing(FishingShip ship);
     void dropAnchor(FishingShip ship);

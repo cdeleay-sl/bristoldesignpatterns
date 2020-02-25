@@ -1,8 +1,6 @@
-package com.scottlogic.dp.state;
+package com.scottlogic.dp.state.ships;
 
-import com.scottlogic.dp.state.ships.FishingShip;
-
-public class SailingState implements ShipState {
+class SailingState implements ShipState {
 
     @Override
     public void startFishing(FishingShip ship) {

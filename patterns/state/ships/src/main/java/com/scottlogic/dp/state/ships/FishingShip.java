@@ -1,12 +1,9 @@
 package com.scottlogic.dp.state.ships;
 
-import com.scottlogic.dp.state.DriftingState;
-import com.scottlogic.dp.state.ShipState;
-
 public class FishingShip {
     private ShipState state = new DriftingState();
 
-    public void setState(ShipState state) {
+    void setState(ShipState state) {
         this.state = state;
     }
 
