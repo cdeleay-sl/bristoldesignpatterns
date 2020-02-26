@@ -1,17 +1,11 @@
-package com.scottlogic.dp.state;
+package com.scottlogic.dp.state.ships;
 
-import com.scottlogic.dp.state.ships.FishingShip;
+class AnchoredState extends ShipState {
 
-public class FishingState implements ShipState {
     @Override
     public void startFishing(FishingShip ship) {
         System.out.println("Fishing 'em ol' fishies.");
-    }
-
-    @Override
-    public void stopFishing(FishingShip ship) {
-        System.out.println("Stop fishing");
-        ship.setState(new AnchoredState());
+        ship.setState(new FishingState());
     }
 
     @Override
@@ -21,7 +15,8 @@ public class FishingState implements ShipState {
 
     @Override
     public void raiseAnchor(FishingShip ship) {
-        System.out.println("Don't sail yet, this one is a biggie!");
+        System.out.println("Now raising anchor.");
+        ship.setState(new DriftingState());
     }
 
     @Override
@@ -30,7 +25,8 @@ public class FishingState implements ShipState {
     }
 
     @Override
-    public void stopSailing(FishingShip ship) {
-        System.out.println("Already still like the wind in summer.");
+    public void wreck(FishingShip ship) {
+        System.out.println("Where did that lightening come from?!");
+        ship.setState(new WreckedState());
     }
 }
