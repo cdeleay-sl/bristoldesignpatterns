@@ -14,10 +14,9 @@ public class Main {
         yourBarge.stop();
         yourBarge.raiseAnchor();
         yourBarge.stopFishing();
-        //yourBarge.wreck();
         yourBarge.sail();
         yourBarge.raiseAnchor();
         yourBarge.sail();
-        //yourBarge.wreck();
+        yourBarge.wreck();
     }
 }
