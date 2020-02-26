@@ -1,16 +1,11 @@
 package com.scottlogic.dp.state.ships;
 
-class AnchoredState implements ShipState {
+class AnchoredState extends ShipState {
 
     @Override
     public void startFishing(FishingShip ship) {
         System.out.println("Fishing 'em ol' fishies.");
         ship.setState(new FishingState());
-    }
-
-    @Override
-    public void stopFishing(FishingShip ship) {
-        System.out.println("Haven't thrown that net yet, mate.");
     }
 
     @Override
@@ -22,11 +17,6 @@ class AnchoredState implements ShipState {
     public void raiseAnchor(FishingShip ship) {
         System.out.println("Now raising anchor.");
         ship.setState(new DriftingState());
-    }
-
-    @Override
-    public void stopSailing(FishingShip ship) {
-        System.out.println("Already still like the wind in summer.");
     }
 
     @Override

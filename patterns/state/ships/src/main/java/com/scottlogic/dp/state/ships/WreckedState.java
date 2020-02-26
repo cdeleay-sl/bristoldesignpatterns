@@ -1,25 +1,28 @@
 package com.scottlogic.dp.state.ships;
 
-public class WreckedState implements ShipState {
+public class WreckedState extends ShipState {
+
+    private String stuck = "Bit stuck here mate, now's not the time.";
+    private String notMoving = "We're not moving anyway, there's no point.";
 
     @Override
     public void startFishing(FishingShip ship) {
-        System.out.println("Bit stuck here mate, we're now's not the time.");
+        System.out.println(stuck);
     }
 
     @Override
     public void stopFishing(FishingShip ship) {
-        System.out.println("Bit stuck here mate, we're now's not the time.");
+        System.out.println(stuck);
     }
 
     @Override
     public void dropAnchor(FishingShip ship) {
-        System.out.println("We're not moving anyway, there's no point.");
+        System.out.println(notMoving);
     }
 
     @Override
     public void raiseAnchor(FishingShip ship) {
-        System.out.println("We're not moving anyway, there's no point.");
+        System.out.println(notMoving);
     }
 
     @Override
