@@ -3,6 +3,8 @@ package com.scottlogic.dp.state.ships;
 public class FishingShip {
     private ShipState state = new DriftingState();
 
+    Engine engine = new Engine();
+
     void setState(ShipState state) {
         this.state = state;
     }

@@ -21,6 +21,7 @@ class SailingState extends ShipState {
     public void stopSailing(FishingShip ship) {
         System.out.println("Stopping");
         ship.setState(new DriftingState());
+        ship.engine.stop();
     }
 
     @Override
