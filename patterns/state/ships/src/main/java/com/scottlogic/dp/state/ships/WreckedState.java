@@ -26,12 +26,12 @@ public class WreckedState extends ShipState {
     }
 
     @Override
-    public void stopSailing(FishingShip ship) {
+    public void stopSailing(FishingShip ship, Engine engine) {
         System.out.println("Still wrecked, can't do much else.");
     }
 
     @Override
-    public void startSailing(FishingShip ship) {
+    public void startSailing(FishingShip ship, Engine engine) {
         System.out.println("We're not going anywhere like this.");
     }
 

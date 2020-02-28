@@ -18,10 +18,10 @@ class DriftingState extends ShipState {
     }
 
     @Override
-    public void startSailing(FishingShip ship){
+    public void startSailing(FishingShip ship, Engine engine) {
         System.out.println("Sailing!");
-        ship.engine.start();
-        if (ship.engine.state == EngineState.BROKEN) {
+        engine.start();
+        if (engine.getEngineState() == EngineState.BROKEN) {
             ship.setState(new StrandedState());
             System.out.println("We're stranded");
         } else {

@@ -24,10 +24,9 @@ class FishingState extends ShipState {
     }
 
     @Override
-    public void startSailing(FishingShip ship) {
+    public void startSailing(FishingShip ship, Engine engine) {
         System.out.println("Me cannot move this barge 'til we raise the anchor");
     }
-
 
     @Override
     public void wreck(FishingShip ship) {

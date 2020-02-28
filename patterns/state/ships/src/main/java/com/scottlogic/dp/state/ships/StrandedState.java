@@ -1,6 +1,6 @@
 package com.scottlogic.dp.state.ships;
 
-public class StrandedState extends ShipState{
+public class StrandedState extends ShipState {
 
     private String stuck = "Jolly joy, this old barge ain't going nowhere";
 
@@ -24,7 +24,7 @@ public class StrandedState extends ShipState{
     }
 
     @Override
-    void startSailing(FishingShip ship) {
+    void startSailing(FishingShip ship, Engine engine) {
         System.out.println(stuck);
     }
 
@@ -34,7 +34,7 @@ public class StrandedState extends ShipState{
     }
 
     @Override
-    void stopSailing(FishingShip ship) {
+    void stopSailing(FishingShip ship, Engine engine) {
         System.out.println(stuck);
     }
 }

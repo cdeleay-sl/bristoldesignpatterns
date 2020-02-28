@@ -3,7 +3,11 @@ package com.scottlogic.dp.state.ships;
 import java.util.Random;
 
 public class Engine {
-    EngineState state = EngineState.OFF;
+    private EngineState state = EngineState.OFF;
+
+    public EngineState getEngineState() {
+        return state;
+    }
 
     public void start() {
         if (new Random().nextDouble() <= 0.25) {

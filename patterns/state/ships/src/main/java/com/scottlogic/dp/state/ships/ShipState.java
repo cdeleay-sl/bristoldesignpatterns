@@ -11,11 +11,11 @@ abstract class ShipState {
 
     abstract void raiseAnchor(FishingShip ship);
 
-    void stopSailing(FishingShip ship) {
+    void stopSailing(FishingShip ship, Engine engine) {
         System.out.println("Already still like the wind in summer.");
     };
 
-    abstract void startSailing(FishingShip ship);
+    abstract void startSailing(FishingShip ship, Engine engine);
 
     abstract void wreck(FishingShip ship);
 }

@@ -14,7 +14,7 @@ public class FishingShip {
     }
 
     public void stop() {
-        state.stopSailing(this);
+        state.stopSailing(this, engine);
     }
 
     public void anchor() {
@@ -34,7 +34,7 @@ public class FishingShip {
     }
 
     public void sail() {
-        state.startSailing(this);
+        state.startSailing(this, engine);
     }
 
     public void wreck() {

@@ -18,14 +18,14 @@ class SailingState extends ShipState {
     }
 
     @Override
-    public void stopSailing(FishingShip ship) {
+    public void stopSailing(FishingShip ship, Engine engine) {
         System.out.println("Stopping");
         ship.setState(new DriftingState());
-        ship.engine.stop();
+        engine.stop();
     }
 
     @Override
-    public void startSailing(FishingShip ship) {
+    public void startSailing(FishingShip ship, Engine engine) {
         System.out.println("Sailing!");
     }
 
