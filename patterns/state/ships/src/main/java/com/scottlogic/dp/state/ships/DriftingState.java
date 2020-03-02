@@ -29,7 +29,7 @@ class DriftingState extends ShipState {
     ShipState startSailing(Engine engine) {
         System.out.println("Sailing!");
         engine.start();
-        if (engine.getEngineState() == EngineState.BROKEN) {
+        if (!engine.isOperational()) {
             System.out.println("We're stranded");
             return new StrandedState();
         } else {

@@ -5,8 +5,8 @@ import java.util.Random;
 public class Engine {
     private EngineState state = EngineState.OFF;
 
-    public EngineState getEngineState() {
-        return state;
+    public boolean isOperational() {
+        return state == EngineState.ON || state == EngineState.OFF;
     }
 
     public void start() {
