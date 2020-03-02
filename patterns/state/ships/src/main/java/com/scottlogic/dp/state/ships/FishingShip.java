@@ -14,30 +14,30 @@ public class FishingShip {
     }
 
     public void stop() {
-        state.stopSailing(engine);
+        setState(state.stopSailing(engine));
     }
 
     public void anchor() {
-        state.dropAnchor();
+        setState(state.dropAnchor());
     }
 
     public void raiseAnchor() {
-        state.raiseAnchor();
+        setState(state.raiseAnchor());
     }
 
     public void startFishing() {
-        state.startFishing();
+        setState(state.startFishing());
     }
 
     public void stopFishing() {
-        state = state.stopFishing();
+        setState(state.stopFishing());
     }
 
     public void sail() {
-        state = state.startSailing(engine);
+        setState(state.startSailing(engine));
     }
 
     public void wreck() {
-        state = state.wreck();
+        setState(state.wreck());
     }
 }
