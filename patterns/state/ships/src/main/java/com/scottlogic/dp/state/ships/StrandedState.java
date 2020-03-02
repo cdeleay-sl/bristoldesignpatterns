@@ -5,36 +5,45 @@ public class StrandedState extends ShipState {
     private String stuck = "Jolly joy, this old barge ain't going nowhere";
 
     @Override
-    void startFishing(FishingShip ship) {
+    ShipState startFishing() {
         System.out.println(stuck);
-    }
-
-    void stopFishing(FishingShip ship) {
-        System.out.println(stuck);
-    };
-
-    @Override
-    void dropAnchor(FishingShip ship) {
-        System.out.println(stuck);
+        return this;
     }
 
     @Override
-    void raiseAnchor(FishingShip ship) {
+    ShipState stopFishing() {
         System.out.println(stuck);
+        return this;
     }
 
     @Override
-    void startSailing(FishingShip ship, Engine engine) {
+    ShipState dropAnchor() {
         System.out.println(stuck);
+        return this;
     }
 
     @Override
-    void wreck(FishingShip ship) {
+    ShipState raiseAnchor() {
+        System.out.println(stuck);
+        return this;
+    }
+
+    @Override
+    ShipState startSailing(Engine engine) {
+        System.out.println(stuck);
+        return this;
+    }
+
+    @Override
+    ShipState stopSailing(Engine engine) {
+        System.out.println(stuck);
+        return this;
+    }
+
+    @Override
+    ShipState wreck() {
         System.out.println("We're already stranded it can't get any worse!");
+        return this;
     }
 
-    @Override
-    void stopSailing(FishingShip ship, Engine engine) {
-        System.out.println(stuck);
-    }
 }

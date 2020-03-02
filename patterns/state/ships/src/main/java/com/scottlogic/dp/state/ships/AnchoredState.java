@@ -3,30 +3,44 @@ package com.scottlogic.dp.state.ships;
 class AnchoredState extends ShipState {
 
     @Override
-    public void startFishing(FishingShip ship) {
+    public ShipState startFishing() {
         System.out.println("Fishing 'em ol' fishies.");
-        ship.setState(new FishingState());
+        return new FishingState();
     }
 
     @Override
-    public void dropAnchor(FishingShip ship) {
+    public ShipState stopFishing() {
+        System.out.println("Haven't thrown that net yet, mate.");
+        return this;
+    }
+
+    @Override
+    public ShipState dropAnchor() {
         System.out.println("Already anchored");
+        return this;
     }
 
     @Override
-    public void raiseAnchor(FishingShip ship) {
+    public ShipState raiseAnchor() {
         System.out.println("Now raising anchor.");
-        ship.setState(new DriftingState());
+        return new DriftingState();
     }
 
     @Override
-    public void startSailing(FishingShip ship, Engine engine) {
+    public ShipState startSailing(Engine engine) {
         System.out.println("Me cannot move this barge 'til we raise the anchor");
+        return this;
     }
 
     @Override
-    public void wreck(FishingShip ship) {
+    public ShipState stopSailing(Engine engine) {
+        System.out.println("Already still like the wind in summer.");
+        return this;
+    }
+
+    @Override
+    public ShipState wreck() {
         System.out.println("Where did that lightening come from?!");
-        ship.setState(new WreckedState());
+        return new WreckedState();
     }
 }

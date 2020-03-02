@@ -6,37 +6,44 @@ public class WreckedState extends ShipState {
     private String notMoving = "We're not moving anyway, there's no point.";
 
     @Override
-    public void startFishing(FishingShip ship) {
+    public ShipState startFishing() {
         System.out.println(stuck);
+        return this;
     }
 
     @Override
-    public void stopFishing(FishingShip ship) {
+    public ShipState stopFishing() {
         System.out.println(stuck);
+        return this;
     }
 
     @Override
-    public void dropAnchor(FishingShip ship) {
+    public ShipState dropAnchor() {
         System.out.println(notMoving);
+        return this;
     }
 
     @Override
-    public void raiseAnchor(FishingShip ship) {
+    public  ShipState raiseAnchor() {
         System.out.println(notMoving);
+        return this;
     }
 
     @Override
-    public void stopSailing(FishingShip ship, Engine engine) {
+    public ShipState stopSailing(Engine engine) {
         System.out.println("Still wrecked, can't do much else.");
+        return this;
     }
 
     @Override
-    public void startSailing(FishingShip ship, Engine engine) {
+    public ShipState startSailing(Engine engine) {
         System.out.println("We're not going anywhere like this.");
+        return this;
     }
 
     @Override
-    public void wreck(FishingShip ship) {
+    public ShipState wreck() {
         System.out.println("We're already wrecked it can't get any worse!");
+        return this;
     }
 }
