@@ -1,12 +1,12 @@
 package com.scottlogic.dp.factorymethod.shipyards.game;
 
-public class FishingBarge implements Ship{
+public class SturdyFishingShip implements Ship {
 
-    private final int MAX_SPEED = 50;
+    private final int MAX_SPEED = 75;
     private State state = State.DRIFTING;
 
     public int cargoSize() {
-        return 20;
+        return 40;
     }
 
     public void goFishing() {
@@ -14,7 +14,7 @@ public class FishingBarge implements Ship{
         System.out.println("Going fishing");
     }
 
-    public void sail(){
+    public void sail() {
         state = State.SAILING;
     }
 

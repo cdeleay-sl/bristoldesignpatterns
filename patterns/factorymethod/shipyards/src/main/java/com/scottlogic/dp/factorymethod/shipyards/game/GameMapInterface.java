@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class GameMapInterface {
     private Map<String, Shipyard> shipyards = new HashMap<>();
-    private List<FishingBarge> fishingFleet = new ArrayList<>();
+    private List<Ship> fishingFleet = new ArrayList<>();
 
     /**
      * We create two default shipyards
@@ -18,7 +18,7 @@ public class GameMapInterface {
     }
 
     public void createShip(Shipyard shipyard) {
-        FishingBarge ship = shipyard.constructShip();
+        Ship ship = shipyard.constructShip();
         fishingFleet.add(ship);
     }
 
@@ -30,7 +30,12 @@ public class GameMapInterface {
         }
     }
 
+    public void upgrade(Shipyard shipyard) {
+        shipyard.upgrade();
+        System.out.println("Upgrade Shipyard");
+    }
+
     public void commandFleetToFish() {
-        fishingFleet.forEach(FishingBarge::goFishing);
+        fishingFleet.forEach(Ship::goFishing);
     }
 }

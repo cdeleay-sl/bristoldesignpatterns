@@ -17,6 +17,8 @@ public class PlayerInteractionSimulation {
     public void play() {
         Shipyard shipyardA = gameMap.selectShipyard("A");
         System.out.println(shipyardA.showOffer());
+        gameMap.upgrade(shipyardA);
+        System.out.println(shipyardA.showOffer());
         gameMap.createShip(shipyardA);
         gameMap.createShip(shipyardA);
         gameMap.createShip(shipyardA);
