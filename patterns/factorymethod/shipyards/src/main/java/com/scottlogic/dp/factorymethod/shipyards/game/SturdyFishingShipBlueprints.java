@@ -1,21 +1,20 @@
 package com.scottlogic.dp.factorymethod.shipyards.game;
 
-public class FishingShipBlueprints implements ShipBlueprints{
-
-    public FishingBarge fishingShip(Material material) {
+public class SturdyFishingShipBlueprints implements ShipBlueprints{
+    public SturdyFishingShip fishingShip(Material material) {
         if(isMaterialSatisfactory(material)) {
-            return new FishingBarge();
+            return new SturdyFishingShip();
         } else {
             throw new IllegalArgumentException("Insufficient material");
         }
     }
 
     public MaterialRequirements materialNeeded() {
-        return new MaterialRequirements(10, 1, 2);
+        return new MaterialRequirements(50, 1, 2);
     }
 
     public String shipType() {
-        return "Fishing barge";
+        return "Sturdy fishing barge";
     }
 
     private boolean isMaterialSatisfactory(Material material) {

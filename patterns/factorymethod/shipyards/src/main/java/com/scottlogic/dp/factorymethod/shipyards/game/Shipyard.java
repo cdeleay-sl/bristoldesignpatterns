@@ -5,18 +5,22 @@ public class Shipyard {
     private int metal = 100;
     private int cloth = 100;
 
-    private final FishingShipBlueprints blueprints = new FishingShipBlueprints();
+    private ShipBlueprints blueprints = new FishingShipBlueprints();
 
-    FishingBarge constructShip() {
+    Ship constructShip() {
         MaterialRequirements requirements = blueprints.materialNeeded();
         Material material = prepareMaterial(requirements);
 
-        FishingBarge ship = blueprints.fishingShip(material);
+        Ship ship = blueprints.fishingShip(material);
         return ship;
     }
 
     public String showOffer() {
         return String.format("We can create [%s]", blueprints.shipType());
+    }
+
+    public void upgrade() {
+        blueprints = new SturdyFishingShipBlueprints();
     }
 
     private Material prepareMaterial(MaterialRequirements requirements) {
