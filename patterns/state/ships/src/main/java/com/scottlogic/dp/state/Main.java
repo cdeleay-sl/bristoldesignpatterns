@@ -17,5 +17,6 @@ public class Main {
         yourBarge.sail();
         yourBarge.raiseAnchor();
         yourBarge.sail();
+        yourBarge.wreck();
     }
 }
