@@ -3,7 +3,9 @@ package com.scottlogic.dp.state.ships;
 public class FishingShip {
     private ShipState state = new DriftingState();
 
-    void setState(ShipState state) {
+    private Engine engine = new Engine();
+
+    private void setState(ShipState state) {
         this.state = state;
     }
 
@@ -12,30 +14,30 @@ public class FishingShip {
     }
 
     public void stop() {
-        state.stopSailing(this);
+        setState(state.stopSailing(engine));
     }
 
     public void anchor() {
-        state.dropAnchor(this);
+        setState(state.dropAnchor());
     }
 
     public void raiseAnchor() {
-        state.raiseAnchor(this);
+        setState(state.raiseAnchor());
     }
 
     public void startFishing() {
-        state.startFishing(this);
+        setState(state.startFishing());
     }
 
     public void stopFishing() {
-        state.stopFishing(this);
+        setState(state.stopFishing());
     }
 
     public void sail() {
-        state.startSailing(this);
+        setState(state.startSailing(engine));
     }
 
     public void wreck() {
-        state.wreck(this);
+        setState(state.wreck());
     }
 }

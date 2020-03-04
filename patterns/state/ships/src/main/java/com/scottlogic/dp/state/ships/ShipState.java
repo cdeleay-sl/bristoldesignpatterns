@@ -1,21 +1,17 @@
 package com.scottlogic.dp.state.ships;
 
 abstract class ShipState {
-    abstract void startFishing(FishingShip ship);
+    abstract ShipState startFishing();
 
-    void stopFishing(FishingShip ship) {
-        System.out.println("Haven't thrown that net yet, mate.");
-    };
+    abstract ShipState stopFishing();
 
-    abstract void dropAnchor(FishingShip ship);
+    abstract ShipState dropAnchor();
 
-    abstract void raiseAnchor(FishingShip ship);
+    abstract ShipState raiseAnchor();
 
-    void stopSailing(FishingShip ship) {
-        System.out.println("Already still like the wind in summer.");
-    };
+    abstract ShipState stopSailing(Engine engine);
 
-    abstract void startSailing(FishingShip ship);
+    abstract ShipState startSailing(Engine engine);
 
-    abstract void wreck(FishingShip ship);
+    abstract ShipState wreck();
 }
